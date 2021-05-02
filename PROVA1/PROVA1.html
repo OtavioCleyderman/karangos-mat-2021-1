@@ -95,10 +95,10 @@
       React.useEffect(() => {
         let dens, cat
 
-        if(isNaN(area) || isNaN(populacao)) dens = 'N/D'
+        if(isNaN(area) || isNaN(populacao)) dens = '--'
         else dens = populacao / area
 
-        if(dens === 'N/D') cat = ''
+        if(dens === '--') cat = ''
         else if(dens < 100) cat = 'Baixa densidade'
         else if(dens >= 100 && dens <= 1000) cat = 'Média densidade'
         else cat = 'Alta densidade'
