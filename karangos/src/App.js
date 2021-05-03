@@ -24,11 +24,12 @@ import Button from '@material-ui/core/Button'
     </div>
 */
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import yellow from '@material-ui/core/colors/yellow';
 import red from '@material-ui/core/colors/red';
-import TopBar from './ui/TopBar'
-import FooterBar from './ui/FooterBar'
+import TopBar from './ui/TopBar';
+import FooterBar from './ui/FooterBar';
+import Box from '@material-ui/core/Box';
 
 const theme = createMuiTheme({
   palette: {
@@ -42,13 +43,28 @@ const theme = createMuiTheme({
   },
 });
 
+const useStyles = makeStyles((theme) => ({
+  main: {
+    backgroundColor: theme.palette.background.default,
+    minHeight: '100vh', // 100% da altura da área de visualização
+    }
+}))
+
+function Main() {
+  const classes = useStyles()
+  return(
+    <Box className={classes.main}>
+    <TopBar /> 
+      <FooterBar />
+    </Box>
+  )
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
-        <TopBar /> 
-        <FooterBar />
+      <Main />
     </ThemeProvider>
-
   );
 }
 
