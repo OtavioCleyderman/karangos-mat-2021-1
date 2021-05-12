@@ -29,7 +29,7 @@ export default function FooterBar()  {
     return (
         <Toolbar className={classes.toolbar}>
             <Typography variant='caption' display='block' color='textSecondary' align='center' className={classes.text}>
-                Produzido com <LocalCafeIcon fontSize='small' /> by <a className={classes.link} href='mailto:otavio.faria01@fatec.sp.gov.br'>Otávio Cleyderman</a>
+                Produzido com <LocalCafeIcon fontSize='small' /> by <a className={classes.link} href='https://github.com/OtavioCleyderman' target="_blank" rel="noreferrer">Otávio Cleyderman</a>
             </Typography>
         </Toolbar>
     )
