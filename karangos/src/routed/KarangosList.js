@@ -60,22 +60,24 @@ export default function KarangosList() {
     const history = useHistory()
 
     useEffect(() => {
-        async function  getData() {
-            try {// tenta buscar os dados
-                let response = await axios.get('https://api.faustocintra.com.br/karangos?by=marca,modelo')
-                setKarangos(response.data)
-            }
-            catch(error) {
-                console.log(error)
-            }
-        }
         getData()
     }, []) // Quando a lista de dependências é um vetor vazio, o useEffect() é executado apenas uma vez,
            // no carregamento inicial do componente.
 
+    async function  getData() {
+        try {// tenta buscar os dados
+            let response = await axios.get('https://api.faustocintra.com.br/karangos?by=marca,modelo')
+            if(response.data.length > 0) setKarangos(response.data)
+        }
+        catch(error) {
+            console.log(error)
+        }
+    }
+
     async function deleteItem() {
         try {
             await axios.delete(`https://api.faustocintra.com.br/karangos/${deletable}`)
+            getData() // Atualiza os ddos da tabela
             setSbSeverity('success')
             setSbMessage('Exclusão efetuada com sucesso.')
         }
