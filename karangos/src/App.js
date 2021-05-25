@@ -31,7 +31,7 @@ import TopBar from './ui/TopBar';
 import FooterBar from './ui/FooterBar';
 import Box from '@material-ui/core/Box';  
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import KarangosList from './routed/KarangosList';
+import KarangosList from './routed/KarangosList2';
 import KarangosForm from './routed/KarangosForm';
 
 const theme = createMuiTheme({
