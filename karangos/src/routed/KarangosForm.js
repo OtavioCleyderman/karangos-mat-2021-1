@@ -93,7 +93,7 @@ export default function KarangosForm() {
     placa: '',
     preco: 0
   })
-  const [currentId, setCurrentId] = useState()
+ 
 
   const [importadoChecked, setImportadoChecked] = useState(false)
 
@@ -154,7 +154,7 @@ export default function KarangosForm() {
 
     const karangoTemp = {...karango}
 
-    setCurrentId(event.target.id)
+    
     if(event.target.id) property = event.target.id
 
     if(property === 'importado') {
