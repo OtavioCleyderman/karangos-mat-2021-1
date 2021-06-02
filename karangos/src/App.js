@@ -77,6 +77,11 @@ function Main() {
               <KarangosForm />
             </Route>
 
+            {/* :id é um parâmetro (espécie de variável de rota) */}
+            <Route path="/edit/:id"> 
+              <KarangosForm />
+            </Route>
+
           </Switch>
         </Box>
       <FooterBar />
